@@ -8,13 +8,15 @@ import coid.bca.MandiUangTrxService.model.BranchAccount;
 import java.util.Optional;
 
 @Repository
-public interface BranchRepository extends JpaRepository<BranchAccount, Integer> {
+public interface BranchRepository extends JpaRepository<BranchAccount, Long> {
     Optional<BranchAccount> findByBranchAccountNo(String branchAccountNo);
 
     Boolean existsByBranchAccountNo(String branchAccountNo);
+   
+    Optional<BranchAccount> findByMainAccountId(Long mainAccountId);
     
-    Optional<BranchAccount> findByBranchAccountId(Integer branchAccountId);
-    
-    Boolean existsByBranchAccountId(Integer branchAccountId);
+    Boolean existsByBranchAccountId(Long branchAccountId);
+
+	Optional<BranchAccount> findByBranchAccountId(Long branchIdWork);
     
 }

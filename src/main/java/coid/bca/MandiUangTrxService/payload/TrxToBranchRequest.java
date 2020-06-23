@@ -4,19 +4,15 @@ import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class TrxToNonBCARequest {
+public class TrxToBranchRequest {
 
-	@JsonProperty("transfer_to_non_acct")
+	@JsonProperty("transfer_to_acct")
 	@NotBlank
-    private String transferToNonAcct;
+    private String transferToAcct;
 	
 	@JsonProperty("transfer_type")
     @NotBlank
     private String transferType;
-	
-	@JsonProperty("beneficiary_id")
-	@NotBlank
-	private Integer beneficiaryId;
     
 	@JsonProperty("trx_amount")
     @NotBlank
@@ -25,17 +21,13 @@ public class TrxToNonBCARequest {
     @JsonProperty("verification_code")
     @NotBlank
     private String verificationCode;
-    
-    @JsonProperty("bank_name")
-    @NotBlank
-    private String bankName;
 
-	public String getTransferToNonAcct() {
-		return transferToNonAcct;
+	public String getTransferToAcct() {
+		return transferToAcct;
 	}
 
-	public void setTransferToNonAcct(String transferToNonAcct) {
-		this.transferToNonAcct = transferToNonAcct;
+	public void setTransferToAcct(String transferToAcct) {
+		this.transferToAcct = transferToAcct;
 	}
 
 	public String getTransferType() {
@@ -44,14 +36,6 @@ public class TrxToNonBCARequest {
 
 	public void setTransferType(String transferType) {
 		this.transferType = transferType;
-	}
-
-	public Integer getBeneficiaryId() {
-		return beneficiaryId;
-	}
-
-	public void setBeneficiaryId(Integer beneficiaryId) {
-		this.beneficiaryId = beneficiaryId;
 	}
 
 	public Double getTrxAmount() {
@@ -69,13 +53,6 @@ public class TrxToNonBCARequest {
 	public void setVerificationCode(String verificationCode) {
 		this.verificationCode = verificationCode;
 	}
-
-	public String getBankName() {
-		return bankName;
-	}
-
-	public void setBankName(String bankName) {
-		this.bankName = bankName;
-	}
+    
     
 }

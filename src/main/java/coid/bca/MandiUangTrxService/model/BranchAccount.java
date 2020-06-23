@@ -17,6 +17,9 @@ public class BranchAccount {
 	private String branchAccountNo; 
 	
 	@NotBlank
+	private Long mainAccountId;
+	
+	@NotBlank
 	@Column(length = 255)
 	private String branchName;
 	
@@ -56,8 +59,12 @@ public class BranchAccount {
     
     private Date dateUpdated;
     
-    public BranchAccount(String branchAccountNo, String branchName, String picPhone, String picName, Integer cityId, String businessType, String address, String createdBy, Date dateStarted) {
+    private Double branchBalance;
+    
+    public BranchAccount(String branchAccountNo, Long mainAccountId, String branchName, String picPhone, String picName, Integer cityId, 
+    		String businessType, String address, String createdBy, Date dateStarted, Double branchBalance) {
     	this.branchAccountNo = branchAccountNo;
+    	this.mainAccountId = mainAccountId;
     	this.branchName = branchName;
     	this.picPhone = picPhone;
     	this.picName = picName;
@@ -66,6 +73,7 @@ public class BranchAccount {
     	this.address = address;
     	this.createdBy = createdBy;
     	this.dateStarted = dateStarted;
+    	this.branchBalance = branchBalance;
     }
     
     public BranchAccount() {
@@ -191,5 +199,20 @@ public class BranchAccount {
 	public void setDateUpdated(Date dateUpdated) {
 		this.dateUpdated = dateUpdated;
 	}
-    
+
+	public Double getBranchBalance() {
+		return branchBalance;
+	}
+
+	public void setBranchBalance(Double branchBalance) {
+		this.branchBalance = branchBalance;
+	}
+
+	public Long getMainAccountId() {
+		return mainAccountId;
+	}
+
+	public void setMainAccountId(Long mainAccountId) {
+		this.mainAccountId = mainAccountId;
+	}
 }

@@ -10,10 +10,11 @@ import javax.validation.constraints.NotBlank;
 public class BranchTrxToBCA {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long trxId;
+    private Long branchBcaTrxId;
+	//branch_bca_trx_id
 	
 	@NotBlank
-	private Integer branchAccountId; 
+	private Long branchAccountId; 
 	
 	@NotBlank
 	private String acctRecNo;
@@ -33,7 +34,7 @@ public class BranchTrxToBCA {
 	@NotBlank
 	private String trxByUser;
 	
-	public BranchTrxToBCA (String acctRecNo, Integer branchAccountId, String transferType, Integer beneficiaryId, Double trxAmount, Date trxDate, String trxByUser) {
+	public BranchTrxToBCA (String acctRecNo, Long branchAccountId, String transferType, Integer beneficiaryId, Double trxAmount, Date trxDate, String trxByUser) {
 		this.acctRecNo = acctRecNo;
 		this.branchAccountId = branchAccountId;
 		this.transferType = transferType;
@@ -42,20 +43,24 @@ public class BranchTrxToBCA {
 		this.trxDate = trxDate;
 		this.trxByUser = trxByUser;
 	}
-
-	public Long getTrxId() {
-		return trxId;
+	
+	public BranchTrxToBCA() {
+		
 	}
 
-	public void setTrxId(Long trxId) {
-		this.trxId = trxId;
+	public Long getBranchBcaTrxId() {
+		return branchBcaTrxId;
 	}
 
-	public Integer getBranchAccountId() {
+	public void setBranchBcaTrxId(Long branchBcaTrxId) {
+		this.branchBcaTrxId = branchBcaTrxId;
+	}
+
+	public Long getBranchAccountId() {
 		return branchAccountId;
 	}
 
-	public void setBranchAccountId(Integer branchAccountId) {
+	public void setBranchAccountId(Long branchAccountId) {
 		this.branchAccountId = branchAccountId;
 	}
 

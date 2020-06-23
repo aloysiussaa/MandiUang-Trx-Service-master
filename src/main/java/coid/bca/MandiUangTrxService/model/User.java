@@ -47,8 +47,11 @@ public class User extends DateAudit {
     
 	@NotBlank
     @Size(max = 10)
-    private Integer branchIdWork;
+    private Long branchIdWork;
     
+    @Size(max = 10)
+    private Long mainIdWork;
+	
 	@NotBlank
     @Size(max = 20)
     private String jobPosition;
@@ -88,7 +91,7 @@ public class User extends DateAudit {
 
     }
 
-    public User(Integer branchIdWork , String name, String username, String phoneNumber, String email, String password, String jobPosition, String createdBy, String updatedBy) {
+    public User(Long branchIdWork , String name, String username, String phoneNumber, String email, String password, String jobPosition, String createdBy, String updatedBy) {
         this.branchIdWork = branchIdWork; 
     	this.name = name;
         this.username = username;
@@ -132,12 +135,20 @@ public class User extends DateAudit {
 		this.name = name;
 	}
 
-	public Integer getBranchIdWork() {
+	public Long getBranchIdWork() {
 		return branchIdWork;
 	}
 
-	public void setBranchIdWork(Integer branchIdWork) {
+	public void setBranchIdWork(Long branchIdWork) {
 		this.branchIdWork = branchIdWork;
+	}
+	
+	public Long getMainIdWork() {
+		return mainIdWork;
+	}
+
+	public void setMainIdWork(Long mainIdWork) {
+		this.mainIdWork = mainIdWork;
 	}
 
 	public String getJobPosition() {
